@@ -1,0 +1,27 @@
+body{
+        /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
+}
+.social-icons a {
+  display: inline-block;
+  height: 3.5rem;
+  width: 2.5rem;
+  /* color: #ffffff !important; */
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  margin-right: 1rem;
+}
+#bs1{
+    /* border-radius: 30%; */
+}
+.card{
+    border: none;
+}
+#s2i{
+    font-size: 50%;
+}
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  #s5fi { display: none; }   /* hide it elsewhere */
+}
+#s5cb
+}
