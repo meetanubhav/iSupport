@@ -23,5 +23,5 @@ body{
 @media screen and (min-width: 401px) and (max-width: 1024px) {
   #s5fi { display: none; }   /* hide it elsewhere */
 }
-#s5cb
-}
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1);}
