@@ -9,6 +9,7 @@
     <!--custom css -->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/bs-stepper.css"
 
     <!-- icon pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
@@ -17,6 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/controller.js"></script>
 </head>
 
 <body>
@@ -48,53 +50,58 @@
     <div class="container-fluid">
         <hr class="m-0">
         <section class=" p-3 p-lg-5 d-flex justify-content-center" id="section1">
-            <div class="w-100">
-                <ul class="stepper horizontal" id="horizontal-stepper">
-                    <li class="step active">
-                        <div class="step-title waves-effect waves-dark">Step 1</div>
-                        <div class="step-new-content">
-                            <div class="row">
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="email-horizontal" type="email" class="validate form-control" required>
-                                    <label for="email-horizontal">Email</label>
+            <div class="mb-5 p-4 bg-white shadow-sm">
+                <h3>Linear stepper</h3>
+                <div id="stepper1" class="bs-stepper">
+                    <div class="bs-stepper-header" role="tablist">
+                        <div class="step" data-target="#test-l-1">
+                            <button type="button" class="bs-stepper-trigger" role="tab" id="stepper1trigger1"
+                                aria-controls="test-l-1">
+                                <span class="bs-stepper-circle">1</span>
+                                <span class="bs-stepper-label">Email</span>
+                            </button>
+                        </div>
+                        <div class="bs-stepper-line"></div>
+                        <div class="step" data-target="#test-l-2">
+                            <button type="button" class="bs-stepper-trigger" role="tab" id="stepper1trigger2"
+                                aria-controls="test-l-2">
+                                <span class="bs-stepper-circle">2</span>
+                                <span class="bs-stepper-label">Password</span>
+                            </button>
+                        </div>
+                        <div class="bs-stepper-line"></div>
+                        <div class="step" data-target="#test-l-3">
+                            <button type="button" class="bs-stepper-trigger" role="tab" id="stepper1trigger3"
+                                aria-controls="test-l-3">
+                                <span class="bs-stepper-circle">3</span>
+                                <span class="bs-stepper-label">Validate</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bs-stepper-content">
+                        <form onSubmit="return false" class="tab-content">
+                            <div id="test-l-1" role="tabpanel" class="tab-pane" aria-labelledby="stepper1trigger1">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                                 </div>
+                                <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                             </div>
-                            <div class="step-actions">
-                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-                                    data-feedback="someFunction21">CONTINUE</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 2</div>
-                        <div class="step-new-content">
-                            <div class="row">
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="password-horizontal" type="password" class="validate form-control"
-                                        required>
-                                    <label for="password-horizontal">Your password</label>
+                            <div id="test-l-2" role="tabpanel" class="tab-pane" aria-labelledby="stepper1trigger2">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                 </div>
+                                <button class="btn btn-primary" onclick="stepper1.previous()">Previous</button>
+                                <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                             </div>
-                            <div class="step-actions">
-                                <button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-                                    data-feedback="someFunction21">CONTINUE</button>
-                                <button
-                                    class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+                            <div id="test-l-3" role="tabpanel" class="tab-pane text-center" aria-labelledby="stepper1trigger3">
+                                <button class="btn btn-primary mt-5" onclick="stepper1.previous()">Previous</button>
+                                <button type="submit" class="btn btn-primary mt-5">Submit</button>
                             </div>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 3</div>
-                        <div class="step-new-content">
-                            Finish!
-                            <div class="step-actions">
-                                <button class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4"
-                                    type="button">SUBMIT</button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                        </form>
+                    </div>
+                </div>
         </section>
     </div>
     <!-- Footer starts -->
