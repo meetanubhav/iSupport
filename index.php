@@ -69,9 +69,9 @@
                             <div class="container-fluid">
                                 <form method="POST" action="www/login/logincheck.php">
                                     <div class="form-group">
-                                        <label for="username">Username</label>
+                                        <label for="email">E-mail</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                        <input type="text" name="username" id="username" class="form-control" placeholder="Username"
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="e-mail"
                                             aria-describedby="helpId" required="required">
                                         <label for="password">Password</label>
                                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -81,13 +81,14 @@
                                             raise their
                                             voices</small>
                                     </div>
-                                </form>
+                               
                                  <label>Not a Youth Leader? </label> <a class="link" href="#register" id="redg" data-target="#register" role="button" data-toggle="modal" data-dismiss="modal">Create an account</a>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success">Login</button>
+                            <button type="submit" placeholder="Login" name="login" class="btn btn-success"> Login</button>
+                             </form>
                         </div>
                     </div>
                 </div>
@@ -108,7 +109,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="www/register/register.php">
+                                <form method="POST" action="../www/register/register.php">
                                     <div class="form-group">
                                         <label for="Name">Name</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -117,7 +118,7 @@
                                         <label for="email">E-mail</label>
                                         <i class="fa fa-mailchimp"></i>
                                         <i class="fa fa-lock" aria-hidden="true"></i>
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="email"
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="email"
                                             aria-describedby="helpId" required="required">
                                         <label for="password">Password</label>
                                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -127,13 +128,13 @@
                                             raise their
                                             voices</small> -->
                                     </div>
-                                </form>
                                  <!-- <label>A Youth Leader? </label> <a class="link" href="">Sign</a> -->
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
-                            <button type="button" class="btn btn-success">Register</button>
+                           <button type="submit" placeholder="Register" name="register" class="btn btn-success"> Register</button>
+                             </form>
                         </div>
                     </div>
                 </div>

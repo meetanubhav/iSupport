@@ -4,9 +4,9 @@ $error_array=array();
 if (isset($_POST["login"]))
 {
 	include'../database_driver/db.php';
-	$username=strip_tags(mysqli_real_escape_string($con,$_POST["username"]));
+	$email=strip_tags(mysqli_real_escape_string($con,$_POST["email"]));
     $password=sha1(mysqli_real_escape_string($con,$_POST["password"]));
-    $r=mysqli_query($con,"select * from youthlog where username='$username' and password='$password'");
+    $r=mysqli_query($con,"select * from youthlog where email='$email' and password='$password'");
 		if ($arr=mysqli_fetch_assoc($r))
 			{
 				$_SESSION['rid']=$rid;
