@@ -22,7 +22,7 @@
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="index.html">iSupport</a>
+        <a class="navbar-brand" href="index.php">iSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,14 +35,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="#">Action 1</a>
                         <a class="dropdown-item" href="#">Action 2</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -50,14 +50,14 @@
                 </form> -->
             <div class="my-2">
                 <a name="" id="" class="btn btn-success" href="#modelId" role="button" data-toggle="modal"
-                    data-target="#modelId">Sign in</a>
+                    data-target="#modelId">Login</a>
             </div>
             <!-- Button trigger modal -->
             <!-- Modal -->
             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content" id="login">
                         <div class="modal-header bg-primary text-light">
                             <h5 class="modal-title text-center">Welcome Youth Leader
                                 <i class="fa fa-flag" aria-hidden="true"></i></h5>
@@ -71,33 +71,91 @@
                                     <div class="form-group">
                                         <label for="username">Username</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                        <input type="text" name="" id="username" class="form-control" placeholder=""
-                                            aria-describedby="helpId">
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="Username"
+                                            aria-describedby="helpId" required="required">
                                         <label for="password">Password</label>
                                         <i class="fa fa-lock" aria-hidden="true"></i>
-                                        <input type="text" name="" id="username" class="form-control" placeholder=""
-                                            aria-describedby="helpId">
+                                        <input type="text" name="password" id="password" class="form-control" placeholder="Password"
+                                            aria-describedby="helpId" required="required">
                                         <small id="helpId" class="text-muted">**Only the youth leaders can sign-in to
                                             raise their
                                             voices</small>
                                     </div>
                                 </form>
+                                 <label>Not a Youth Leader? </label> <a class="link" href="#register" id="redg" data-target="#register" role="button" data-toggle="modal" data-dismiss="modal">Create an account</a>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success">Sign In</button>
+                            <button type="button" class="btn btn-success">Login</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Register -->
+
+             <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="login">
+                        <div class="modal-header bg-primary text-light">
+                            <h5 class="modal-title text-center">Welcome Youth Leader
+                                <i class="fa fa-flag" aria-hidden="true"></i></h5>
+                            <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <form method="POST" action="www/register/register.php">
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="name"
+                                            aria-describedby="helpId" required="required">
+                                        <label for="email">E-mail</label>
+                                        <i class="fa fa-mailchimp"></i>
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="email"
+                                            aria-describedby="helpId" required="required">
+                                        <label for="password">Password</label>
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                        <input type="text" name="password" id="password" class="form-control" placeholder="Password"
+                                            aria-describedby="helpId" required="required">
+                                        <!-- <small id="helpId" class="text-muted">**Only the youth leaders can sign-in to
+                                            raise their
+                                            voices</small> -->
+                                    </div>
+                                </form>
+                                 <!-- <label>A Youth Leader? </label> <a class="link" href="">Sign</a> -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+                            <button type="button" class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register -->
+            
+
             <script>
                 $('#exampleModal').on('show.bs.modal', event => {
                     var button = $(event.relatedTarget);
                     var modal = $(this);
+
                     // Use above variables to manipulate the DOM
 
+                });
+               $("#redg").click(function () {
+                    // $("#login").hide();
+                    // $("#clickclose").click(function () {
+                    //     $("#register").hide();
+                    //      $("#login").hide();
+                    // });
                 });
             </script>
         </div>
@@ -109,7 +167,7 @@
             <div class="w-100">
                 <h1>Building a Better World</h1>
                 <p class="lead mb-5">When we are together, nothing is impossble</p>
-                <button type="button" class="btn btn-warning text-white" id="bs1">Sign a Petition</button>
+                <button type="button" class="btn btn-warning text-white" id="bs1">Write a Petition</button>
                 <button type="button" class="btn btn-primary" id="bs1">Learn more</button>
             </div>
         </section>
@@ -188,7 +246,7 @@
 
         <hr class="m-0">
 
-        <section class="p-3 p-lg-5 d-flex justify-content-center text-white">
+        <!-- <section class="p-3 p-lg-5 d-flex justify-content-center text-white">
             <div class="w-100">
                 <h1 class="mb-5">
                     What do you care?
@@ -269,7 +327,7 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <hr class="m-0">
         <section class="p-3 p-lg-5 d-flex justify-content-center text-dark">
@@ -348,7 +406,7 @@
 
     <!-- Footer -->
 
-    <footer class="page-footer font-small blue pt-4 container-fluid bg-primary text-white" id="about">
+    <footer class="page-footer font-small blue pt-4 container-fluid bg-secondary text-white" id="about">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -394,14 +452,14 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="skillasian@gmail.com" class="text-primary">skillasian@gmail.com</a>
+                            <a href="mailto:skillasian@gmail.com?Subject=write%20to%20support" class="text-primary">skillasian@gmail.com</a>
                         </li>
                     </ul>
                     <div class="social-icons">
-                        <a href="#" class="text-primary"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
-                        <a href="#" class="text-success"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                         <a href="#" class="text-dark"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#" class="text-info"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     </div>
 
                 </div>
