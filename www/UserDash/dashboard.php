@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $youthid=$_SESSION['youthid']; 
+?>
 <html>
 
 <head>

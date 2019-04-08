@@ -10,6 +10,8 @@ if (isset($_POST["register"]))
     $r=mysqli_query($con,"INSERT INTO youthlog(name, email, password, timestamp) VALUES ('$name','$email','$password','$timestamp')");
         if ($r>0)
         {
+            $arr=mysqli_fetch_assoc($r)
+            $_SESSION['youthid']=$arr['youthid'];
             header('location: ../UserDash/dashboard.php');
         }
         else{header('location: ../../index.php');}

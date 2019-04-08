@@ -9,16 +9,15 @@ if (isset($_POST["login"]))
     $r=mysqli_query($con,"select * from youthlog where email='$email' and password='$password'");
 		if ($arr=mysqli_fetch_assoc($r))
 			{
-				$_SESSION['rid']=$rid;
+				$_SESSION['youthid']=$arr['youthid'];
 				header('location: ../Userdash/dashboard.php');
 			}
 			else{
-				header('location: ../index.php');
+				header('location: ../../index.php');
 
-			}
-		}
-	else{
-		header('location: ../index.php');
-	}
+            }
 }
+	else{
+		header('location: ../../index.php');
+	}
 ?>

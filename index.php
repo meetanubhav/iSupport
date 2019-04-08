@@ -109,7 +109,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="../www/register/register.php">
+                                <form method="POST" action="www/register/register.php">
                                     <div class="form-group">
                                         <label for="Name">Name</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
