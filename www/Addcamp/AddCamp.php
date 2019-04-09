@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="../../assets/js/controller.js"></script>
 </head>
-
+<!-- $("#button1").click(function () {}); -->
 <body>
 
     <!-- Navbar section -->
@@ -44,33 +44,83 @@
         </div>
     </nav>
     <!-- body starts -->
+    <script>
+         $(document).ready(function () {
+             $("#step2").hide();
+             $("#step3").hide();
+             $("#step4").hide();
+             $("#stepper1").css("background-color", "#dc3545");
+            $("#stepper2").css("background-color", "#6c757d");
+            $("#stepper3").css("background-color", "#6c757d");
+            $("#stepper4").css("background-color", "#6c757d");
+            $("#stepper1").css("color", "white");
+             $("#stepper2").css("color", "white");
+             $("#stepper3").css("color", "white");
+             $("#stepper4").css("color", "white");
+             $("#button1").click(function () {
+                 $('input[type="text"]').each(function(){
+                if($(this).val()!=""){
+                $("#step1").hide();
+                $("#step2").show();
+                $("#stepper2").css("background-color", "#dc3545");
+                 }
+                 else{
+                     alert('Text field is empty!');
+                 }
+                });
+             });
+             $("#button2").click(function () {
+                $("#step2").hide();
+                $("#step3").show();
+                $("#stepper3").css("background-color", "#dc3545");
+             });
+             $("#button3").click(function () {
+                $("#step3").hide();
+                $("#step4").show();
+                $("#stepper4").css("background-color", "#dc3545");
+             });
+         });
+    </script>
     <div class="container-fluid h-100">
         <hr class="m-0">
         <section class=" p-3 w-100 p-lg-5 d-flex justify-content-center" id="section1">
-            <div class="bs-stepper">
-                <div class="bs-stepper-header" role="tablist">
-                    <!-- your steps here -->
-                    <div class="step" data-target="#logins-part">
-                        <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-                            <span class="bs-stepper-circle">1</span>
-                            <span class="bs-stepper-label">Logins</span>
-                        </button>
-                    </div>
-                    <div class="line"></div>
-                    <div class="step" data-target="#information-part">
-                        <button type="button" class="step-trigger" role="tab" aria-controls="information-part"
-                            id="information-part-trigger">
-                            <span class="bs-stepper-circle">2</span>
-                            <span class="bs-stepper-label">Various information</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="bs-stepper-content">
-                    <!-- your steps content here -->
-                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger"></div>
-                    <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger"></div>
-                </div>
+            <form class="container" action="add2db.php" method="POST">
+                <div class="row">
+                <span class="badge badge-pill fa-1x p-3 m-5" id="stepper1">1</span>
+                <span class="badge badge-pill fa-1x p-3 m-5" id="stepper2">2</span>
+                <span class="badge badge-pill fa-1x p-3 m-5" id="stepper3">3</span>
+                <span class="badge badge-pill fa-1x p-3 m-5" id="stepper4">4</span>
             </div>
+                <div class="form-group gp1" id="step1">
+                  <h2>Write your petition title</h2>
+                  <small id="helpId" class="text-muted">This is the first thing people will see about your petition. Get their attention with a short title that focusses on the change you’d like them to support.</small>
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <br>
+                  <button type="button" name="" id="button1" class="btn btn-danger btn-md ">Save and Continue</button>
+                </div>
+                <div class="form-group" id="step2">
+                  <h2>Choose a decision maker</h2>
+                  <small id="helpId" class="text-muted">This is the person, organisation, or group that can make a decision about your petition. Change.org will send them updates on your petition and encourage a response.</small>
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <br>
+                  <button type="button" name="" id="button2" class="btn btn-danger btn-md ">Save and Continue</button>
+                </div>
+                <div class="form-group" id="step3">
+                  <h2>Explain the problem you want to solve</h2>
+                  <small id="helpId" class="text-muted">People are more likely to support your petition if it’s clear why you care. Explain how this change will impact you, your family, or your community.</small>
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <br>
+                  <button type="button" name="" id="button3" class="btn btn-danger btn-md ">Save and Continue</button>
+                </div>
+                <div class="form-group" id="step4">
+                  <h2>Add a photo or video</h2>
+                  <small id="fileHelpId" class="form-text text-muted">Petitions with a photo or video receive <b>six times</b> more signatures than those without. Include one that captures the emotion of your story.</small>
+                  <input type="file" class="form-control-files btn-primary" name="add file" id="file" placeholder="add file" aria-describedby="fileHelpId" required="required">  
+                  <br>  
+                  <button type="submit" placeholder="Submit" name="submit" class="btn btn-danger mb-1"> Submit</button>          
+                </div>
+            </form>
+           
         </section>
     </div> <!-- Footer starts -->
     <footer class="page-footer font-small blue pt-4 container-fluid bg-primary text-white" id="about">

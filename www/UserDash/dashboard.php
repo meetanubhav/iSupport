@@ -1,6 +1,12 @@
 <?php
     session_start();
     $youthid=$_SESSION['youthid']; 
+//      if ($fid > 0) {
+
+//      }
+//     else {
+//      header('location: ../../index.php');
+//    }
 ?>
 <html>
 

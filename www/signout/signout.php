@@ -4,8 +4,5 @@ session_destroy();
 $youthid=$_SESSION['youthid'];
 session_unset($_SESSION["youthid"]);
 session_unset($_SESSION['sessionid']);
-header('location:../index.html');
-}
-
-
+header('location:../../index.php');
 ?>
