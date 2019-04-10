@@ -7,6 +7,7 @@
 //     else {
 //      header('location: ../../index.php');
 //    }
+    $_SESSION['youthid'] =$youthid;
 ?>
 <html>
 
@@ -86,9 +87,11 @@
                         </span>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-2">
-                        <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
-                            <i class="fa fa-plus" aria-hidden="true"> Add Campaign</i>
-                        </button>
+                        <a href="../Addcamp/AddCamp.php">
+                            <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
+                                <i class="fa fa-plus" aria-hidden="true"> Add Campaign</i>
+                            </button>
+                        </a>
                     </div>
                 </div>
 
@@ -102,7 +105,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-6 col-sm-12">
                     <div class="card grow">
-                        <div class="card-body shadow p-3 rounded bg-success">
+                        <div class="card-body shadow p-3 rounded bg-primary">
                             <i class="fa fa-edit fa-4x" aria-hidden="true"></i>
                             <p class="text-right fa-2x"> 85 Campaign Created</p>
                         </div>
@@ -110,7 +113,7 @@
                 </div>
                 <div class="col-md-12 col-lg-6 col-sm-12">
                     <div class="card grow">
-                        <div class="card-body shadow p-3 rounded bg-success">
+                        <div class="card-body shadow p-3 rounded bg-primary">
                             <i class="fa fa-hand-peace fa-4x" aria-hidden="true"></i>
                             <p class="text-right fa-2x"> 99 Campaign Supported</p>
                         </div>

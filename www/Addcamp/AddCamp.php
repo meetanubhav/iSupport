@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $youthid=$_SESSION['youthid']; 
+    $_SESSION['youthid']=$youthid;
+?>
 <html>
 
 <head>
@@ -58,16 +63,16 @@
              $("#stepper3").css("color", "white");
              $("#stepper4").css("color", "white");
              $("#button1").click(function () {
-                 $('input[type="text"]').each(function(){
-                if($(this).val()!=""){
+                //  $('input[type="text"]').each(function(){
+                // if($(this).val()!=""){
                 $("#step1").hide();
                 $("#step2").show();
                 $("#stepper2").css("background-color", "#dc3545");
-                 }
-                 else{
-                     alert('Text field is empty!');
-                 }
-                });
+                //  }
+                //  else{
+                //      alert('Text field is empty!');
+                //  }
+                // });
              });
              $("#button2").click(function () {
                 $("#step2").hide();
@@ -94,28 +99,29 @@
                 <div class="form-group gp1" id="step1">
                   <h2>Write your petition title</h2>
                   <small id="helpId" class="text-muted">This is the first thing people will see about your petition. Get their attention with a short title that focusses on the change you’d like them to support.</small>
-                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <input type="text" name="title" id="title" class="form-control" placeholder="" aria-describedby="helpId" required="required">
                   <br>
                   <button type="button" name="" id="button1" class="btn btn-danger btn-md ">Save and Continue</button>
                 </div>
                 <div class="form-group" id="step2">
                   <h2>Choose a decision maker</h2>
                   <small id="helpId" class="text-muted">This is the person, organisation, or group that can make a decision about your petition. Change.org will send them updates on your petition and encourage a response.</small>
-                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <input type="text" name="petto" id="petto" class="form-control" placeholder="" aria-describedby="helpId" required="required">
                   <br>
                   <button type="button" name="" id="button2" class="btn btn-danger btn-md ">Save and Continue</button>
                 </div>
                 <div class="form-group" id="step3">
                   <h2>Explain the problem you want to solve</h2>
                   <small id="helpId" class="text-muted">People are more likely to support your petition if it’s clear why you care. Explain how this change will impact you, your family, or your community.</small>
-                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" required="required">
+                  <input type="text" name="problem" id="problem" class="form-control" placeholder="" aria-describedby="helpId" required="required">
                   <br>
                   <button type="button" name="" id="button3" class="btn btn-danger btn-md ">Save and Continue</button>
                 </div>
                 <div class="form-group" id="step4">
                   <h2>Add a photo or video</h2>
                   <small id="fileHelpId" class="form-text text-muted">Petitions with a photo or video receive <b>six times</b> more signatures than those without. Include one that captures the emotion of your story.</small>
-                  <input type="file" class="form-control-files btn-primary" name="add file" id="file" placeholder="add file" aria-describedby="fileHelpId" required="required">  
+                  <!-- <input type="file" class="form-control-files btn-primary" name="add file" id="file" placeholder="add file" aria-describedby="fileHelpId" required="required">   -->
+                  <input class="" type="file" name="fileToUpload" id="fileToUpload">	
                   <br>  
                   <button type="submit" placeholder="Submit" name="submit" class="btn btn-danger mb-1"> Submit</button>          
                 </div>

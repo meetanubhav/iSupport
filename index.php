@@ -179,7 +179,7 @@
             <div class="w-100">
                 <h1 class="">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-7 col-sm-12">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -209,7 +209,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-5 col-sm-12">
                             <p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa">ABC</i>
                             </p>
@@ -343,8 +343,8 @@
                             <div class="card-body">
                                 <h4 class="card-title text-center">You are Activist?</h4>
                                 <p class="card-text text-center">activist - some description over here</p>
-                                <a name="" id="" class="btn btn-primary" href="#" role="button">
-                                    <i class="fas fa-edit" aria-hidden="true"></i> Start Campaign</a>
+                                <!-- <a name="" id="" class="btn btn-primary" href="#" role="button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> Start Campaign</a> -->
                             </div>
                         </div>
                     </div>
@@ -356,8 +356,8 @@
                             <div class="card-body">
                                 <h4 class="card-title text-center">You are Supporter?</h4>
                                 <p class="card-text text-center">supporter - some description over here</p>
-                                <a name="" id="" class="btn btn-primary " href="#" role="button">
-                                    <i class="fas fa-hand-peace" aria-hidden="true"></i> Show support</a>
+                                <!-- <a name="" id="" class="btn btn-primary " href="#" role="button"> -->
+                                    <!-- <i class="fas fa-hand-peace" aria-hidden="true"></i> Show support</a> -->
                             </div>
                         </div>
                     </div>
