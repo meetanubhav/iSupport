@@ -7,7 +7,11 @@
 //     else {
 //      header('location: ../../index.php');
 //    }
+    include '../database_driver/db.php';
     $_SESSION['youthid'] =$youthid;
+    $user=mysqli_query($con,"select * from youthlog where youthid='$youthid'");
+    $userdetails=mysqli_fetch_assoc($user);
+    
 ?>
 <html>
 
@@ -66,7 +70,7 @@
                             alt="profile image">
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6">
-                        <h1 class="text-left">Youth name</h1>
+                        <h1 class="text-left"><?php echo $userdetails['name']; ?></h1>
                         <p class="lead">
                             <i class="fa fa-map-marker" aria-hidden="true"> </i> Bhubaneswar,India
                         </p>
@@ -123,7 +127,10 @@
             </div>
 
         </section>
-
+<?php 
+    $camp=mysqli_query($con,"select * from petition where youthid='$youthid'");
+    $campaign=mysqli_fetch_assoc($camp);
+?>
         <hr class="m-0">
         <section class="p-3 p-lg-5 d-flex justify-content-center">
             <div class="w-100">
@@ -138,7 +145,7 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-500" src="..." alt="First slide">
+                                        <img class="d-block h-500" src=<?php echo $campaign['pic']; ?>" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
@@ -161,17 +168,16 @@
                         </div>
                         <div class="col-md-5">
                             <p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa">ABC</i>
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
                             </p>
-                            <h3 class="mb-0 text-sublime">The raised issue will go here</h3>
+                            <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
                             <br>
                             <p class="lead text-sublime">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore enim tempora vero
-                                ipsum sed
+                                <?php echo $campaign['problem']; ?>
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
-                                Area,city,country
+                               India
                             </p>
                             <div class="progress mb-2">
                                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"

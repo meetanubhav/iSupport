@@ -89,7 +89,7 @@
     <div class="container-fluid h-100">
         <hr class="m-0">
         <section class=" p-3 w-100 p-lg-5 d-flex justify-content-center" id="section1">
-            <form class="container" action="add2db.php" method="POST">
+            <form class="container" action="add2db.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
                 <span class="badge badge-pill fa-1x p-3 m-5" id="stepper1">1</span>
                 <span class="badge badge-pill fa-1x p-3 m-5" id="stepper2">2</span>
