@@ -60,7 +60,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow grow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -68,7 +67,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -76,7 +74,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12">
                         <div class="card grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -84,7 +81,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -92,7 +88,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -100,7 +95,6 @@ include '../database_driver/db.php';
                     <div class="col-md-4 col-sm-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
@@ -119,11 +113,11 @@ include '../database_driver/db.php';
                         <img class="d-block h-500 w-100" src="../../<?php echo $campaign['pic']; ?>" alt="img">
                     </div>
                     <div class="col-md-5">
-                        <p class="lead">
-                            <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
+                        <a href="../campshow.php"><p class="lead">
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
                         </p>
                         <h3 class="mb-0 text-sublime"><?php echo $campaign['title'];$petid=$campaign['petid']; ?></h3>
-                        <br>
+                        <br></a>
                         <p class="lead text-sublime">
                            <?php echo $campaign['problem']; ?>
                         </p>

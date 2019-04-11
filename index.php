@@ -237,7 +237,7 @@
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
-                                Area,city,country
+                               India
                             </p>
                              <?php
                                 $support=mysqli_query($con," SELECT COUNT(*) AS totalsupport FROM supportlog WHERE petid='$petid'");
