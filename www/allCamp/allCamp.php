@@ -1,5 +1,9 @@
+<?php
+include '../database_driver/db.php';
+    $camp=mysqli_query($con,"select * from petition");
+    $campaign=mysqli_fetch_assoc($camp);  
+?>
 <html>
-
 <head>
     <title>iSupport</title>
     
@@ -38,8 +42,8 @@
             </ul>
             <div class="my-2">
 
-                <a name="" id="" class="btn btn-danger" href="../signout/signout.php" role="button">
-                    <i class="fas fa-sign-out-alt text-white"></i> Sign out</a>
+                <!-- <a name="" id="" class="btn btn-danger" href="../signout/signout.php" role="button">
+                    <i class="fas fa-sign-out-alt text-white"></i> Sign out</a> -->
             </div>
         </div>
     </nav>
@@ -52,7 +56,7 @@
                 <h1 class="text-dark mb-5">
                     All Campaign
                 </h1>
-                <div class="row mb-5">
+                <div class="row mb-5 container-fluid">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow grow rounded bg-primary">
@@ -64,37 +68,13 @@
                     <div class="col-md-4 col-sm-12">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-tree fa-4x" aria-hidden="true"></i>
-                                <p class="text-right fa-2x">Enviorment</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="card mb-5 grow">
-                            <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-user fa-4x" aria-hidden="true"></i>
-                                <p class="text-right fa-2x">Social</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="card mb-5 grow">
-                            <div class="card-body shadow rounded bg-primary">
                                 <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <div class="card mb-5 grow">
-                            <div class="card-body shadow rounded bg-primary">
-                                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
-                                <p class="text-right fa-2x">Education</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="card mb-5 grow">
+                        <div class="card grow">
                             <div class="card-body shadow rounded bg-primary">
                                 <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                                 <p class="text-right fa-2x">Education</p>
@@ -131,46 +111,52 @@
         </section>
 
         <hr class="m-0">
-        <section class="p-3 p-lg-5 d-flex justify-content-center text-white bg-secondary">
-            <div class="w-100">
-                <h1 class="text-dark">Trending</h1>
+        <section class="p-3 p-lg-5 d-flex justify-content-center text-dark">
+            <div class="">
+                <h1 class="text-dark">Trending &nbsp;  </h1>
                 <div class="row">
                     <div class="col-md-7">
-                        <img class="d-block h-500" src="..." alt="img">
+                        <img class="d-block h-500 w-100" src="../../<?php echo $campaign['pic']; ?>" alt="img">
                     </div>
                     <div class="col-md-5">
                         <p class="lead">
-                            <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa">ABC</i>
+                            <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
                         </p>
-                        <h3 class="mb-0 text-sublime">The raised issue will go here</h3>
+                        <h3 class="mb-0 text-sublime"><?php echo $campaign['title'];$petid=$campaign['petid']; ?></h3>
                         <br>
                         <p class="lead text-sublime">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore enim tempora vero
-                            ipsum sed
+                           <?php echo $campaign['problem']; ?>
                         </p>
+                          <?php
+                                $support=mysqli_query($con," SELECT COUNT(*) AS totalsupport FROM supportlog WHERE petid='$petid'");
+                                $scount=mysqli_fetch_assoc($support);  
+                                ?>
                         <p class="lead">
                             <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
-                            Area,city,country
+                            India
                         </p>
                         <div class="progress mb-2">
-                            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                            <div class="progress-bar" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25" aria-valuemin="0"
                                 aria-valuemax="100"></div>
                         </div>
                         <div class="mb-5" id="s2bs">
                             <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
-                                <i class="fa fa-thumbs-up fa-sm"></i> 15,550 supporters
+                          
+                                <i class="fa fa-thumbs-up fa-sm"></i> <?php echo $scount['totalsupport']; ?> supporters
+                                
                             </button>
-                            <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
+                            <!-- <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
                                 <i class="fa fa-thumbs-down fa-sm"></i> 3,550 opposition
-                            </button>
+                            </button> -->
                             <button type="button" name="" id="" class="btn btn-dark btn-sm" btn-lg btn-block">
                                 <i class="fa fa-tag fa-sm" aria-hidden="true"></i> tag
                             </button>
                     </div>
                 </div>
             </div>
-            </section>
+         </section>
     </div>
+    
 </body>
 
 </html>

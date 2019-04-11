@@ -52,7 +52,7 @@ include 'database_driver/db.php';
             <div class="w-100">
                 <h1 class="">
                     <div class="row">
-                        <div class="col-md-7 col-sm-12">
+                        <div class="col-md-12 col-sm-12">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <!-- <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -61,7 +61,7 @@ include 'database_driver/db.php';
                                 </ol> -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-500" src="<?php echo $campaign['pic']; ?>" alt="First slide">
+                                        <img class="d-block h-100 w-100" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
@@ -92,7 +92,7 @@ include 'database_driver/db.php';
                           
                             }
                             </script>
-                        <div class="col-md-5 col-sm-12" id="directcamp">
+                        <div class="col-md-12 col-sm-12 p-5" id="directcamp">
                             <p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
                             </p>
@@ -103,28 +103,144 @@ include 'database_driver/db.php';
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
-                                Area,city,country
+                                India
                             </p>
+                            <?php
+                                $support=mysqli_query($con," SELECT COUNT(*) AS totalsupport FROM supportlog WHERE petid='$petid'");
+                                $scount=mysqli_fetch_assoc($support);  
+                                ?>
                             <div class="progress mb-2">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                <div class="progress-bar" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="mb-5" id="s2bs">
                                 <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
-                                    <i class="fa fa-thumbs-up fa-sm"></i> 15,550 supporters
+                                    <i class="fa fa-thumbs-up fa-sm"></i> <?php echo $scount['totalsupport']; ?> supporters
                                 </button>
-                                <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
+                                <!-- <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
                                     <i class="fa fa-thumbs-down fa-sm"></i> 3,550 opposition
-                                </button>
+                                </button> -->
                                 <button type="button" name="" id="" class="btn btn-dark btn-sm" btn-lg btn-block">
                                     <i class="fa fa-tag fa-sm" aria-hidden="true"></i> tag
                                 </button>
                             </div>
-
+                            <a name="" id="" class="btn btn-Danger btn-block text-white p-2 fixed-bottom" data-toggle="modal" data-target="#exampleModalCenter" role="button"><i class="fa fa-lock"> Sign this petition</i></a>
                         </div>
                     </div>
+                    
                 </h1>
             </div>
         </section>
+        <!-- modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Support Campaign</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            <div class="modal-body">
+                               <div class="container">
+                                   <form action="vote/support.php" method="POST">
+                                     <div class="form-group">
+                                       <input type="text"
+                                         class="form-control" name="fname" id="fname" aria-describedby="helpId" placeholder="First Name"> 
+                                    </div>
+                                    <div class="form-group">   
+                                         <input type="text"
+                                         class="form-control" name="lname" id="lname" aria-describedby="helpId" placeholder="Last Name">          
+                                     </div>
+                                    <div class="form-group">   
+                                        <input type="email"
+                                         class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail">                                             
+                                     </div>         
+                                      <input type="number" name="petid" id="phpvalv" value="<?php echo $campaign['petid']; ?>" readonly="" style="visibility: hidden;" />                            
+                               </div>
+                               
+                            </div>
+                            <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                <button type="submit" name="submit" class="btn btn-danger btn-block"><i class="fa fa-lock"> Sign this petition</i></button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+<!-- footer -->
+  <footer class="page-footer font-small blue pt-4 container-fluid bg-secondary text-white" id="about">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Isupport</h5>
+                    <p class="lead mb-5">We work on social cause</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Phone no: </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>+917809597456</p>
+                        </li>
+                        <li>
+                            <p>+917075497456</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Mail us</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mailto:skillasian@gmail.com?Subject=write%20to%20support" class="text-primary">skillasian@gmail.com</a>
+                        </li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-dark"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: isupport
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
 </body>
 </html>

@@ -229,27 +229,31 @@
                         <div class="col-md-5 col-sm-12" id="directcamp">
                             <a href="www/campshow.php"><p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
-                            </p></a>
-                            <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
-                            <br>
+                            </p>
+                            <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title']; ?></h3>
+                            <br></a>
                             <p class="lead text-sublime">
-                               <?php echo $campaign['problem']; ?>
+                               <?php echo $campaign['problem'];$petid=$campaign['petid']; ?>
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
                                 Area,city,country
                             </p>
+                             <?php
+                                $support=mysqli_query($con," SELECT COUNT(*) AS totalsupport FROM supportlog WHERE petid='$petid'");
+                                $scount=mysqli_fetch_assoc($support);  
+                                ?>
                             <div class="progress mb-2">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                <div class="progress-bar" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="mb-5" id="s2bs">
                                 <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
-                                    <i class="fa fa-thumbs-up fa-sm"></i> 15,550 supporters
+                                    <i class="fa fa-thumbs-up fa-sm"></i> <?php echo $scount['totalsupport']; ?> supporters
                                 </button>
-                                <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
+                                <!-- <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
                                     <i class="fa fa-thumbs-down fa-sm"></i> 3,550 opposition
-                                </button>
+                                </button> -->
                                 <button type="button" name="" id="" class="btn btn-dark btn-sm" btn-lg btn-block">
                                     <i class="fa fa-tag fa-sm" aria-hidden="true"></i> tag
                                 </button>
