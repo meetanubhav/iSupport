@@ -3,6 +3,7 @@
                         include 'www/database_driver/db.php';
                          $camp=mysqli_query($con,"select * from petition");
                         $campaign=mysqli_fetch_assoc($camp); 
+                        session_start();
                         ?>
 
 <head>
@@ -219,11 +220,16 @@
                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                         Launch demo modal
                         </button> -->
-                        
-                        <div class="col-md-5 col-sm-12">
-                            <p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
-                            </p>
+                        <script>
+                            function myFunction() {
+                            location.replace("www/campshow.php")
+                          
+                            }
+                            </script>
+                        <div class="col-md-5 col-sm-12" id="directcamp">
+                            <a href="www/campshow.php"><p class="lead">
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
+                            </p></a>
                             <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
                             <br>
                             <p class="lead text-sublime">
