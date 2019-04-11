@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="www/allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -244,7 +244,7 @@
                                 $scount=mysqli_fetch_assoc($support);  
                                 ?>
                             <div class="progress mb-2">
-                                <div class="progress-bar" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25"
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="mb-5" id="s2bs">

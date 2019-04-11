@@ -11,7 +11,7 @@ include '../database_driver/db.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     
     <!--custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     
     <!-- icon pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
@@ -48,7 +48,7 @@ include '../database_driver/db.php';
         </div>
     </nav>
     <!-- body starts -->
-    <div class="container-fluid h-100">
+    <div class="h-100">
         <hr class="m-0">
 
         <section class="p-3 p-lg-5 d-flex justify-content-center text-white">
@@ -72,7 +72,7 @@ include '../database_driver/db.php';
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <div class="card grow">
+                        <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
                                 <p class="text-right fa-2x">Education</p>
                             </div>
@@ -116,7 +116,7 @@ include '../database_driver/db.php';
                         <a href="../campshow.php"><p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
                         </p>
-                        <h3 class="mb-0 text-sublime"><?php echo $campaign['title'];$petid=$campaign['petid']; ?></h3>
+                        <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title'];$petid=$campaign['petid']; ?></h3>
                         <br></a>
                         <p class="lead text-sublime">
                            <?php echo $campaign['problem']; ?>
@@ -130,7 +130,7 @@ include '../database_driver/db.php';
                             India
                         </p>
                         <div class="progress mb-2">
-                            <div class="progress-bar" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25" aria-valuemin="0"
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25" aria-valuemin="0"
                                 aria-valuemax="100"></div>
                         </div>
                         <div class="mb-5" id="s2bs">
@@ -149,7 +149,80 @@ include '../database_driver/db.php';
                 </div>
             </div>
          </section>
+         <!-- footer -->
+  <footer class="page-footer font-small blue pt-4 container-fluid bg-secondary text-white" id="about">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Isupport</h5>
+                    <p class="lead mb-5">We work on social cause</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Phone no: </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>+917809597456</p>
+                        </li>
+                        <li>
+                            <p>+917075497456</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Mail us</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="mailto:skillasian@gmail.com?Subject=write%20to%20support" class="text-primary">skillasian@gmail.com</a>
+                        </li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-dark"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: isupport
+        </div>
+        <!-- Copyright -->
+
+    </footer>
     </div>
+    
     
 </body>
 

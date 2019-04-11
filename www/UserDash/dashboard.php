@@ -1,12 +1,7 @@
 <?php
     session_start();
     $youthid=$_SESSION['youthid']; 
-//      if ($fid > 0) {
-
-//      }
-//     else {
-//      header('location: ../../index.php');
-//    }
+     if ($youthid > 0) {
     include '../database_driver/db.php';
     $_SESSION['youthid'] =$youthid;
     $user=mysqli_query($con,"select * from youthlog where youthid='$youthid'");
@@ -280,3 +275,9 @@
 </body>
 
 </html>
+<?php 
+}
+    else {
+     header('location: ../../index.php');
+   }
+?>
