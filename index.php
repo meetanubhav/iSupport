@@ -1,4 +1,9 @@
 <html>
+     <?php 
+                        include 'www/database_driver/db.php';
+                         $camp=mysqli_query($con,"select * from petition");
+                        $campaign=mysqli_fetch_assoc($camp); 
+                        ?>
 
 <head>
     <title>iSupport</title>
@@ -16,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
 </head>
 
 <body>
@@ -188,14 +194,14 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-500" src="..." alt="First slide">
+                                        <img class="d-block h-500" src="<?php echo $campaign['pic']; ?>" alt="First slide">
                                     </div>
-                                    <div class="carousel-item">
+                                    <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Third slide">
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
@@ -209,15 +215,19 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- Button trigger modal -->
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Launch demo modal
+                        </button> -->
+                        
                         <div class="col-md-5 col-sm-12">
                             <p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa">ABC</i>
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
                             </p>
-                            <h3 class="mb-0 text-sublime">The raised issue will go here</h3>
+                            <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
                             <br>
                             <p class="lead text-sublime">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore enim tempora vero
-                                ipsum sed
+                               <?php echo $campaign['problem']; ?>
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>

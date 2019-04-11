@@ -145,14 +145,14 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-500" src=<?php echo $campaign['pic']; ?>" alt="First slide">
+                                        <img class="d-block h-500" src="../../<?php echo $campaign['pic']; ?>" alt="First slide">
+                                    </div>
+                                    <!-- <div class="carousel-item">
+                                        <img class="d-block h-500" src="" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block h-500" src="..." alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block h-500" src="..." alt="Third slide">
-                                    </div>
+                                        <img class="d-block h-500" src="" alt="Third slide">
+                                    </div> -->
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
@@ -168,8 +168,11 @@
                         </div>
                         <div class="col-md-5">
                             <p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto'];$pid=$campaign['petid']; $_SESSION['pid']=$pid; ?></i>
+                                
                             </p>
+
+                           
                             <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
                             <br>
                             <p class="lead text-sublime">
@@ -184,10 +187,10 @@
                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="mb-5" id="s2bs">
-                                <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
+                                <button type="button" name="" id="" class="btn btn-primary btn-sm disabled" btn-lg btn-block">
                                     <i class="fa fa-thumbs-up fa-sm"></i> 15,550 supporters
                                 </button>
-                                <button type="button" name="" id="" class="btn btn-danger btn-sm" btn-lg btn-block">
+                                <button type="button" name="" id="" class="btn btn-danger btn-sm disabled" btn-lg btn-block">
                                     <i class="fa fa-thumbs-down fa-sm"></i> 3,550 opposition
                                 </button>
                                 <button type="button" name="" id="" class="btn btn-dark btn-sm" btn-lg btn-block">

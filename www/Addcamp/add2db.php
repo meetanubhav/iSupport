@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST["submit"]))
 {
     // 
-    $target_dir = "../../assets/uploads/";
+    $target_dir = "assets/uploads/";
     $uploaded_image =  rand().basename($_FILES["fileToUpload"]["name"]);
     $pic = $target_dir . $uploaded_image;
     $uploadOk = 1;
