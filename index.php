@@ -1,7 +1,7 @@
 <html>
      <?php 
                         include 'www/database_driver/db.php';
-                         $camp=mysqli_query($con,"select * from petition ");
+                         $camp=mysqli_query($con,"select * from petition ORDER BY timestamp DESC");
                         $campaign=mysqli_fetch_assoc($camp); 
                         session_start();
                         ?>
@@ -196,7 +196,7 @@
                                 </ol>
                                 <div class="carousel-inner"> -->
                                     <div class="">
-                                        <img class="d-block h-500 w-100" src="<?php echo $campaign['pic']; ?>" alt="First slide">
+                                        <img class="d-block h-500 w-100" src="<?php echo $campaign['pic'];?>" alt="First slide">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
@@ -228,7 +228,7 @@
                             }
                             </script>
                         <div class="col-md-5 col-sm-12" id="directcamp">
-                            <a href="www/campshow.php?petid=<?php echo $campaign['petid']; ?>"><p class="lead">
+                            <a href="www/campshow.php?petition=<?php echo $campaign['petid']; ?>"><p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto'];?></i>
                             </p>
                             <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title']; ?></h3>

@@ -1,4 +1,7 @@
 <?php
+
+// $error=$_GET['error'];
+
 include '../database_driver/db.php';
     $camp=mysqli_query($con,"select * from petition");
     // $campaign=mysqli_fetch_assoc($camp); 
@@ -231,3 +234,18 @@ include '../database_driver/db.php';
 </body>
 
 </html>
+<?php
+if (isset($_GET['message']))
+{
+    $message=$_GET['message'];
+    if($message=='"error"'){
+    ?>
+    <script>alert('You have already supported');</script>
+    <?php }
+    elseif ($message=='"thankyou"') {
+        ?>
+    <script>alert('Thankyou for supporting');</script>
+    <?php
+    }
+}
+?>

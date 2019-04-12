@@ -147,17 +147,18 @@ include 'database_driver/db.php';
                                    <form action="vote/support.php" method="POST">
                                      <div class="form-group">
                                        <input type="text"
-                                         class="form-control" name="fname" id="fname" aria-describedby="helpId" placeholder="First Name"> 
+                                         class="form-control" name="fname" id="fname" aria-describedby="helpId" placeholder="First Name" required="required"> 
                                     </div>
                                     <div class="form-group">   
                                          <input type="text"
-                                         class="form-control" name="lname" id="lname" aria-describedby="helpId" placeholder="Last Name">          
+                                         class="form-control" name="lname" id="lname" aria-describedby="helpId" placeholder="Last Name" required="required">          
                                      </div>
                                     <div class="form-group">   
                                         <input type="email"
-                                         class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail">                                             
+                                         class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail" required="required">   
+                                         <input type="number" name="petid" id="phpvalv" value="<?php echo $campaign['petid']; ?>" readonly="" style="visibility: hidden;" />                                                          
                                      </div>         
-                                      <input type="number" name="petid" id="phpvalv" value="<?php echo $campaign['petid']; ?>" readonly="" style="visibility: hidden;" />                            
+                                                  
                                </div>
                                
                             </div>
