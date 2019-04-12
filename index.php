@@ -1,7 +1,7 @@
 <html>
      <?php 
                         include 'www/database_driver/db.php';
-                         $camp=mysqli_query($con,"select * from petition LIMIT 3");
+                         $camp=mysqli_query($con,"select * from petition ");
                         $campaign=mysqli_fetch_assoc($camp); 
                         session_start();
                         ?>
@@ -228,8 +228,8 @@
                             }
                             </script>
                         <div class="col-md-5 col-sm-12" id="directcamp">
-                            <a href="www/campshow.php"><p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
+                            <a href="www/campshow.php?petid=<?php echo $campaign['petid']; ?>"><p class="lead">
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto'];?></i>
                             </p>
                             <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title']; ?></h3>
                             <br></a>

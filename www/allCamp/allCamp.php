@@ -1,7 +1,8 @@
 <?php
 include '../database_driver/db.php';
     $camp=mysqli_query($con,"select * from petition");
-    // $campaign=mysqli_fetch_assoc($camp);  
+    // $campaign=mysqli_fetch_assoc($camp); 
+    // session_start(); 
 ?>
 <html>
 <head>
@@ -115,8 +116,8 @@ include '../database_driver/db.php';
                         <img class="d-block h-500 w-100" src="../../<?php echo $campaign['pic']; ?>" alt="img">
                     </div>
                     <div class="col-md-5">
-                        <a href="../campshow.php"><p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; $_SESSION['petid']=$campaign['petid']; ?></i>
+                        <a href="../campshow.php?petition=<?php echo $campaign['petid']; ?>"><p class="lead">
+                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto']; ?></i>
                         </p>
                         <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title'];$petid=$campaign['petid']; ?></h3>
                         <br></a>

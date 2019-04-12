@@ -1,6 +1,7 @@
 <?php
-    session_start();
-	$petid=$_SESSION['petid'];
+    // session_start();
+    // $petid=$_SESSION['petid'];
+    $petid=$_GET['petition'];
 include 'database_driver/db.php';
     $camp=mysqli_query($con,"select * from petition where petid = '$petid'");
     $campaign=mysqli_fetch_assoc($camp);  
@@ -61,7 +62,7 @@ include 'database_driver/db.php';
                                 </ol> -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-100 w-100" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
+                                        <img class="d-block h-50 w-50" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
