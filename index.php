@@ -1,7 +1,7 @@
 <html>
      <?php 
                         include 'www/database_driver/db.php';
-                         $camp=mysqli_query($con,"select * from petition");
+                         $camp=mysqli_query($con,"select * from petition LIMIT 3");
                         $campaign=mysqli_fetch_assoc($camp); 
                         session_start();
                         ?>
@@ -175,7 +175,8 @@
             <div class="w-100">
                 <h1>Building a Better World</h1>
                 <p class="lead mb-5">When we are together, nothing is impossble</p>
-                <button type="button" class="btn btn-warning text-white" id="bs1">Write a Petition</button>
+                <button type="button"  href="#modelId" role="button" data-toggle="modal"
+                    data-target="#modelId" class="btn btn-warning text-white" id="bs1">Write a Petition</button>
                 <button type="button" class="btn btn-primary" id="bs1">Learn more</button>
             </div>
         </section>
@@ -187,22 +188,22 @@
                 <h1 class="">
                     <div class="row">
                         <div class="col-md-7 col-sm-12">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                 </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block h-500" src="<?php echo $campaign['pic']; ?>" alt="First slide">
+                                <div class="carousel-inner"> -->
+                                    <div class="">
+                                        <img class="d-block h-500 w-100" src="<?php echo $campaign['pic']; ?>" alt="First slide">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Third slide">
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
@@ -214,7 +215,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- Button trigger modal -->
                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">

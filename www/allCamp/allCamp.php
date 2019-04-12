@@ -1,7 +1,7 @@
 <?php
 include '../database_driver/db.php';
     $camp=mysqli_query($con,"select * from petition");
-    $campaign=mysqli_fetch_assoc($camp);  
+    // $campaign=mysqli_fetch_assoc($camp);  
 ?>
 <html>
 <head>
@@ -26,7 +26,7 @@ include '../database_driver/db.php';
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">iSupport</a>
+        <a class="navbar-brand" href="../../index.php">iSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,53 +57,55 @@ include '../database_driver/db.php';
                     All Campaign
                 </h1>
                 <div class="row mb-5 container-fluid">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow grow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-2 col-sm-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-2 col-sm-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-2 col-sm-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-2 col-sm-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-2 col-sm-4">
                         <div class="card mb-5 grow">
                             <div class="card-body shadow rounded bg-primary">
-                                <p class="text-right fa-2x">Education</p>
+                                <p class="text-right">Education</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
+<?php 
+    // $campaign=mysqli_fetch_assoc($camp);
+    while ($campaign = $camp->fetch_assoc()){
+?>
         <hr class="m-0">
         <section class="p-3 p-lg-5 d-flex justify-content-center text-dark">
             <div class="">
@@ -149,6 +151,7 @@ include '../database_driver/db.php';
                 </div>
             </div>
          </section>
+    <?php } ?>
          <!-- footer -->
   <footer class="page-footer font-small blue pt-4 container-fluid bg-secondary text-white" id="about">
 

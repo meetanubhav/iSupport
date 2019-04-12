@@ -6,6 +6,7 @@
     $_SESSION['youthid'] =$youthid;
     $user=mysqli_query($con,"select * from youthlog where youthid='$youthid'");
     $userdetails=mysqli_fetch_assoc($user);
+   
     
 ?>
 <html>
@@ -99,22 +100,31 @@
         <!-- Section 2 -->
 
         <hr class="m-0">
-
+        <?php
+            $support=mysqli_query($con," SELECT COUNT(*) AS totalcamps FROM petition WHERE youthid='$youthid'");
+            $scount=mysqli_fetch_assoc($support);
+            $sc=mysqli_query($con,"select * from petition where youthid='$youthid'");
+            $camp1=mysqli_fetch_assoc($sc);
+            $petid=$camp1['petid'];
+    
+            $peoplesupport=mysqli_query($con," SELECT COUNT(*) AS totalpsupport FROM supportlog WHERE petid='$petid'");
+            $pcount=mysqli_fetch_assoc($peoplesupport);
+         ?>
         <section class=" p-3 p-lg-5  justify-content-center" id="section2">
             <div class="row">
-                <div class="col-md-12 col-lg-6 col-sm-12">
+                <div class="col-md-6 col-lg-6 col-sm-6">
                     <div class="card grow">
                         <div class="card-body shadow p-3 rounded bg-primary">
                             <i class="fa fa-edit fa-4x" aria-hidden="true"></i>
-                            <p class="text-right fa-2x"> 85 Campaign Created</p>
+                            <p class="text-right fa-2x"> <span class="text-white"><?php echo $scount['totalcamps']; ?></span> Campaign Created</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-6 col-sm-12">
+                <div class="col-md-6 col-lg-6 col-sm-6">
                     <div class="card grow">
                         <div class="card-body shadow p-3 rounded bg-primary">
                             <i class="fa fa-hand-peace fa-4x" aria-hidden="true"></i>
-                            <p class="text-right fa-2x"> 99 Campaign Supported</p>
+                            <p class="text-right fa-2x"> <span class="text-white"><?php echo $pcount['totalpsupport']; ?></span> People Supported</p>
                         </div>
                     </div>
 
@@ -123,32 +133,33 @@
 
         </section>
 <?php 
-    $camp=mysqli_query($con,"select * from petition where youthid='$youthid'");
-    $campaign=mysqli_fetch_assoc($camp);
+    // $campaign=mysqli_fetch_assoc($camp);
+     $camp=mysqli_query($con,"select * from petition where youthid='$youthid'");
+    while ($campaign = $camp->fetch_assoc()){
 ?>
         <hr class="m-0">
         <section class="p-3 p-lg-5 d-flex justify-content-center">
             <div class="w-100">
                 <h1 class="">
                     <div class="row">
-                        <div class="col-md-7">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <!-- <div class="col-md-7"> -->
+                            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block h-500" src="../../<?php echo $campaign['pic']; ?>" alt="First slide">
-                                    </div>
+                                    <div class="carousel-item active"> -->
+                                        <!-- <img class="d-block h-500" src="../../" alt="First slide"> -->
+                                    <!-- </div> -->
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block h-500" src="" alt="Third slide">
                                     </div> -->
-                                </div>
+                                <!-- </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                     data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -159,11 +170,14 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
-                            </div>
+                            </div> -->
+                        <!-- </div> -->
+                         <div class="col-md-7">
+                            <img class="d-block h-500 w-100 shadow" src="../../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                         </div>
                         <div class="col-md-5">
                             <p class="lead">
-                                <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto'];$pid=$campaign['petid']; $_SESSION['pid']=$pid; ?></i>
+                                <i class="fas fa-paper-plane text-danger "> Petition to</i> <i class="fas fa "><?php echo $campaign['petto'];$pid=$campaign['petid']; $_SESSION['pid']=$pid; ?></i>
                                 
                             </p>
 
@@ -171,23 +185,27 @@
                             <h3 class="mb-0 text-sublime"><?php echo $campaign['title']; ?></h3>
                             <br>
                             <p class="lead text-sublime">
-                                <?php echo $campaign['problem']; ?>
+                                <?php echo $campaign['problem'];$petid=$campaign['petid']; ?> ?>
                             </p>
                             <p class="lead">
                                 <i class="fas fa-location-arrow" aria-hidden="true" id="s2i"></i>
                                India
                             </p>
+                             <?php
+                                $support=mysqli_query($con," SELECT COUNT(*) AS totalsupport FROM supportlog WHERE petid='$petid'");
+                                $scount=mysqli_fetch_assoc($support);  
+                                ?>
                             <div class="progress mb-2">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $scount['totalsupport']; ?>%;" aria-valuenow="25"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="mb-5" id="s2bs">
-                                <button type="button" name="" id="" class="btn btn-primary btn-sm disabled" btn-lg btn-block">
-                                    <i class="fa fa-thumbs-up fa-sm"></i> 15,550 supporters
+                                <button type="button" name="" id="" class="btn btn-primary btn-sm " btn-lg btn-block">
+                                    <i class="fa fa-thumbs-up fa-sm"></i>  <?php echo $scount['totalsupport']; ?> supporters
                                 </button>
-                                <button type="button" name="" id="" class="btn btn-danger btn-sm disabled" btn-lg btn-block">
+                                <!-- <button type="button" name="" id="" class="btn btn-danger btn-sm disabled" btn-lg btn-block">
                                     <i class="fa fa-thumbs-down fa-sm"></i> 3,550 opposition
-                                </button>
+                                </button> -->
                                 <button type="button" name="" id="" class="btn btn-dark btn-sm" btn-lg btn-block">
                                     <i class="fa fa-tag fa-sm" aria-hidden="true"></i> tag
                                 </button>
@@ -198,10 +216,11 @@
                 </h1>
             </div>
         </section>
+    <?php }?>
     </div>
 
     <!-- footer -->
-    <footer class="page-footer font-small blue pt-4 container-fluid bg-primary text-white" id="about">
+    <footer class="page-footer font-small blue pt-4 container-fluid bg-secondary text-white" id="about">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
