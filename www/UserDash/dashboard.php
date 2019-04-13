@@ -12,7 +12,7 @@
 <html>
 
 <head>
-    <title>iSupport</title>
+    <title>MoSupport</title>
 
     <!-- Bootstrap-4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -34,7 +34,7 @@
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">iSupport</a>
+        <a class="navbar-brand" href="#">MoSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -104,11 +104,15 @@
             $support=mysqli_query($con," SELECT COUNT(*) AS totalcamps FROM petition WHERE youthid='$youthid'");
             $scount=mysqli_fetch_assoc($support);
             $sc=mysqli_query($con,"select * from petition where youthid='$youthid'");
-            $camp1=mysqli_fetch_assoc($sc);
-            $petid=$camp1['petid'];
-    
+            // $camp1=mysqli_fetch_assoc($sc);
+            // $petid=$camp1['petid'];
+            $pcount1=0;
+        while ($camp1 = $sc->fetch_assoc()){
+             $petid=$camp1['petid'];
             $peoplesupport=mysqli_query($con," SELECT COUNT(*) AS totalpsupport FROM supportlog WHERE petid='$petid'");
             $pcount=mysqli_fetch_assoc($peoplesupport);
+            $pcount1+=$pcount['totalpsupport'];
+        }
          ?>
         <section class=" p-3 p-lg-5  justify-content-center" id="section2">
             <div class="row">
@@ -124,7 +128,7 @@
                     <div class="card grow">
                         <div class="card-body shadow p-3 rounded bg-primary">
                             <i class="fa fa-hand-peace fa-4x" aria-hidden="true"></i>
-                            <p class="text-right fa-2x"> <span class="text-white"><?php echo $pcount['totalpsupport']; ?></span> People Supported</p>
+                            <p class="text-right fa-2x"> <span class="text-white"><?php echo $pcount1; ?></span> People Supported</p>
                         </div>
                     </div>
 
@@ -232,7 +236,7 @@
                 <div class="col-md-6 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <h5 class="text-uppercase">Isupport</h5>
+                    <h5 class="text-uppercase">MoSupport</h5>
                     <p class="lead mb-5">We work on social cause</p>
 
                 </div>
@@ -286,7 +290,7 @@
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: isupport
+        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: MoSupport
         </div>
         <!-- Copyright -->
 

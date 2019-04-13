@@ -8,7 +8,7 @@ include 'database_driver/db.php';
 ?>
 <html>
     <head>
-    <title>iSupport</title>
+    <title>MoSupport</title>
 
     <!-- Bootstrap-4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ include 'database_driver/db.php';
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="../index.php">iSupport</a>
+        <a class="navbar-brand" href="../index.php">MoSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@ include 'database_driver/db.php';
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -52,9 +52,9 @@ include 'database_driver/db.php';
         <section class="p-3 p-lg-5 d-flex justify-content-center">
             <div class="w-100">
                 <h1 class="">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="row m-0">
+                        <div class="col-md-8 col-sm-8">
+                            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> -->
                                 <!-- <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -62,7 +62,7 @@ include 'database_driver/db.php';
                                 </ol> -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-50 w-50" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
+                                        <img class="d-block h-80 w-100" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
@@ -81,8 +81,25 @@ include 'database_driver/db.php';
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a> -->
-                            </div>
+                            <!-- </div> -->
                         </div>
+                            <div class="col-md-4 col-sm-4">
+                                <h4>Share people your opinion, help them raise their voices</h4>
+                                <div class="mt-5">
+                                    <!-- <button class="btn btn-primary btn-block text-white p-2">Share on Facebook</button> -->
+                                    <div class="p-2">
+                                        <div id="fb-root"></div>
+                                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=520344645106303&autoLogAppEvents=1"></script>
+                                        <div class="fb-share-button" data-href="https://meetanubhav.github.io" data-layout="button_count" data-size="large">
+                                            <a class=" btn btn-primary btn-block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmeetanubhav.github.io%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share on Facebook</a>
+                                        </div>
+                                    </div>
+                                        <a  class="btn btn-success btn-block text-white" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext">Share on Whatsapp
+                                        <!-- <button">Share on Whatsapp <i class="fas fa-whatsapp" aria-hidden="true"></i></button> -->
+                                        </a>
+                                        <button class="btn btn-Danger btn-block text-white p-2" data-toggle="modal" data-target="#exampleModalCenter" role="button"><i class="fa fa-lock"> Sign this petition</i></button>
+                                </div>
+                            </div>
                         <!-- Button trigger modal -->
                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                         Launch demo modal
@@ -184,7 +201,7 @@ include 'database_driver/db.php';
                 <div class="col-md-6 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <h5 class="text-uppercase">Isupport</h5>
+                    <h5 class="text-uppercase">MoSupport</h5>
                     <p class="lead mb-5">We work on social cause</p>
 
                 </div>
@@ -238,7 +255,7 @@ include 'database_driver/db.php';
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: isupport
+        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: MoSupport
         </div>
         <!-- Copyright -->
 

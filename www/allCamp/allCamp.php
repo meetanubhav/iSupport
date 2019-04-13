@@ -9,7 +9,7 @@ include '../database_driver/db.php';
 ?>
 <html>
 <head>
-    <title>iSupport</title>
+    <title>MoSupport</title>
     
     <!-- Bootstrap-4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ include '../database_driver/db.php';
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="../../index.php">iSupport</a>
+        <a class="navbar-brand" href="../../index.php">MoSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -169,7 +169,7 @@ include '../database_driver/db.php';
                 <div class="col-md-6 mt-md-0 mt-3">
 
                     <!-- Content -->
-                    <h5 class="text-uppercase">Isupport</h5>
+                    <h5 class="text-uppercase">MoSupport</h5>
                     <p class="lead mb-5">We work on social cause</p>
 
                 </div>
@@ -223,7 +223,7 @@ include '../database_driver/db.php';
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: isupport
+        <div class="footer-copyright text-center py-3">&copy; 2018 Copyright: MoSupport
         </div>
         <!-- Copyright -->
 
