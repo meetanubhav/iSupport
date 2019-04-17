@@ -83,6 +83,13 @@
                 $("#step3").hide();
                 $("#step4").show();
                 $("#stepper4").css("background-color", "#dc3545");
+                $('input[type="text"]').each(function(){
+                if($(this).val()!=""){ }
+                 else{
+                     alert('Text field is empty!');
+                     location.replace("addCamp.php");
+                 }
+                });
              });
          });
     </script>
@@ -121,7 +128,7 @@
                   <h2>Add a photo or video</h2>
                   <small id="fileHelpId" class="form-text text-muted">Petitions with a photo or video receive <b>six times</b> more signatures than those without. Include one that captures the emotion of your story.</small>
                   <!-- <input type="file" class="form-control-files btn-primary" name="add file" id="file" placeholder="add file" aria-describedby="fileHelpId" required="required">   -->
-                  <input class="" type="file" name="fileToUpload" id="fileToUpload">	
+                  <input class="" type="file" name="fileToUpload" id="fileToUpload" required="required">	
                   <br>  
                   <button type="submit" placeholder="Submit" name="submit" class="btn btn-danger mb-1"> Submit</button>          
                 </div>
