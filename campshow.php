@@ -38,7 +38,7 @@ include 'db.php';
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -161,7 +161,7 @@ include 'db.php';
                                 </div>
                             <div class="modal-body">
                                <div class="container">
-                                   <form action="vote/support.php" method="POST">
+                                   <form action="support.php" method="POST">
                                      <div class="form-group">
                                        <input type="text"
                                          class="form-control" name="fname" id="fname" aria-describedby="helpId" placeholder="First Name" required="required"> 

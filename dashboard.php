@@ -50,7 +50,7 @@
             </ul>
             <div class="my-2">
                
-                <a name="" id="" class="btn btn-danger" href="signout/signout.php" role="button">
+                <a name="" id="" class="btn btn-danger" href="signout.php" role="button">
                     <i class="fas fa-sign-out-alt text-white"></i> Sign out</a>
             </div>
         </div>
@@ -87,7 +87,7 @@
                         </span>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-2">
-                        <a href="Addcamp/AddCamp.php">
+                        <a href="AddCamp.php">
                             <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
                                 <i class="fa fa-plus" aria-hidden="true"> Add Campaign</i>
                             </button>

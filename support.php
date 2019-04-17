@@ -18,7 +18,7 @@
           while ($arr = $check->fetch_assoc()){
               if($arr['petid']==$petid and $arr['email']==$email){
                 //   echo 'exist <br>';
-                 header('location: allCamp/allCamp.php?message="error"');
+                 header('location: allCamp.php?message="error"');
                 //  break;
                 $counter+=1;
               }
@@ -32,7 +32,7 @@
           if($counter==0){
             //   echo 'add';
              $r=mysqli_query($con,"INSERT INTO supportlog(petid,fname,lname, email, timestamp) VALUES ('$petid','$fname','$lname','$email','$timestamp')");
-                header('location: allCamp/allCamp.php?message="thankyou"');
+                header('location: allCamp.php?message="thankyou"');
           }
         // if ($arr=mysqli_fetch_assoc($check))
         //     {

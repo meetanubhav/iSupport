@@ -12,7 +12,7 @@ if (isset($_POST["register"]))
         {
             $arr=mysqli_fetch_assoc($r)
             $_SESSION['youthid']=$arr['youthid'];
-            header('location: UserDash/dashboard.php');
+            header('location: dashboard.php');
         }
         else{header('location: index.php');}
     }

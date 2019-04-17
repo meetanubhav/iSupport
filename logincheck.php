@@ -10,7 +10,7 @@ if (isset($_POST["login"]))
 		if ($arr=mysqli_fetch_assoc($r))
 			{
 				$_SESSION['youthid']=$arr['youthid'];
-				header('location: Userdash/dashboard.php');
+				header('location: dashboard.php');
 			}
 			else{
 				header('location: index.php');

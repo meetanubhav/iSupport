@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="login/logincheck.php">
+                                <form method="POST" action="logincheck.php">
                                     <div class="form-group">
                                         <label for="email">E-mail</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="register/register.php">
+                                <form method="POST" action="register.php">
                                     <div class="form-group">
                                         <label for="Name">Name</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
