@@ -2,7 +2,7 @@
     session_start();
     $youthid=$_SESSION['youthid']; 
      if ($youthid > 0) {
-    include '../database_driver/db.php';
+    include 'db.php';
     $_SESSION['youthid'] =$youthid;
     $user=mysqli_query($con,"select * from youthlog where youthid='$youthid'");
     $userdetails=mysqli_fetch_assoc($user);
@@ -19,7 +19,7 @@
 
     <!--custom css -->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- icon pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
@@ -50,7 +50,7 @@
             </ul>
             <div class="my-2">
                
-                <a name="" id="" class="btn btn-danger" href="../signout/signout.php" role="button">
+                <a name="" id="" class="btn btn-danger" href="signout/signout.php" role="button">
                     <i class="fas fa-sign-out-alt text-white"></i> Sign out</a>
             </div>
         </div>
@@ -62,7 +62,7 @@
             <div class="w-100">
                 <div class="row">
                     <div class="col-md-3 col-lg-3 col-sm-4">
-                        <img src="../../assets/image/dummy/pp.png" class="mx-auto d-block rounded-circle"
+                        <img src="assets/image/dummy/pp.png" class="mx-auto d-block rounded-circle"
                             alt="profile image">
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6">
@@ -87,7 +87,7 @@
                         </span>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-2">
-                        <a href="../Addcamp/AddCamp.php">
+                        <a href="Addcamp/AddCamp.php">
                             <button type="button" name="" id="" class="btn btn-primary btn-sm" btn-lg btn-block">
                                 <i class="fa fa-plus" aria-hidden="true"> Add Campaign</i>
                             </button>
@@ -124,6 +124,7 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="col-md-6 col-lg-6 col-sm-6">
                     <div class="card grow">
                         <div class="card-body shadow p-3 rounded bg-primary">
@@ -155,7 +156,7 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active"> -->
-                                        <!-- <img class="d-block h-500" src="../../" alt="First slide"> -->
+                                        <!-- <img class="d-block h-500" src="" alt="First slide"> -->
                                     <!-- </div> -->
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="" alt="Second slide">
@@ -177,7 +178,7 @@
                             </div> -->
                         <!-- </div> -->
                          <div class="col-md-7">
-                            <img class="d-block h-500 w-100 shadow" src="../../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
+                            <img class="d-block h-500 w-100 shadow" src="<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                         </div>
                         <div class="col-md-5">
                             <p class="lead">
@@ -301,6 +302,6 @@
 <?php 
 }
     else {
-     header('location: ../../index.php');
+     header('location: index.php');
    }
 ?>

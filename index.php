@@ -1,6 +1,6 @@
 <html>
      <?php 
-                        include 'www/database_driver/db.php';
+                        include 'db.php';
                          $camp=mysqli_query($con,"select * from petition ORDER BY timestamp DESC");
                         $campaign=mysqli_fetch_assoc($camp); 
                         session_start();
@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="www/allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="allCamp/allCamp.php">All Campaign <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="www/login/logincheck.php">
+                                <form method="POST" action="login/logincheck.php">
                                     <div class="form-group">
                                         <label for="email">E-mail</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <form method="POST" action="www/register/register.php">
+                                <form method="POST" action="register/register.php">
                                     <div class="form-group">
                                         <label for="Name">Name</label>
                                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -223,12 +223,12 @@
                         </button> -->
                         <script>
                             function myFunction() {
-                            location.replace("www/campshow.php")
+                            location.replace("campshow.php")
                           
                             }
                             </script>
                         <div class="col-md-5 col-sm-12" id="directcamp">
-                            <a href="www/campshow.php?petition=<?php echo $campaign['petid']; ?>"><p class="lead">
+                            <a href="campshow.php?petition=<?php echo $campaign['petid']; ?>"><p class="lead">
                                 <i class="fas fa-paper-plane text-danger"> Petition to</i> <i class="fas fa"><?php echo $campaign['petto'];?></i>
                             </p>
                             <h3 class="mb-0 text-sublime text-dark"><?php echo $campaign['title']; ?></h3>

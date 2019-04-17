@@ -56,13 +56,13 @@ if (isset($_POST["submit"]))
     $petto =strip_tags($_POST["petto"]);
     $problem =strip_tags($_POST["problem"]);
     $timestamp=date("Y-m-d H:i:s");
-    include '../database_driver/db.php';
+    include 'database_driver/db.php';
     $r=mysqli_query($con,"INSERT INTO petition(youthid,title,petto,problem,pic,timestamp) VALUES ('$youthid','$title','$petto','$problem','$pic','$timestamp')");
         if ($r>0)
         {
             // $arr=mysqli_fetch_assoc($r)
             // $_SESSION['youthid']=$arr['youthid'];
-            header('location: ../UserDash/dashboard.php');
+            header('location: UserDash/dashboard.php');
         }
         else{header('location: AddCamp.php');}
     }

@@ -12,22 +12,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <!--custom css -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/bs-stepper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bs-stepper.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
 
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/controller.js"></script>
+    <script src="assets/js/controller.js"></script>
 </head>
 <!-- $("#button1").click(function () {}); -->
 <body>
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="../Userdash/dashboard.php">MoSupport</a>
+        <a class="navbar-brand" href="Userdash/dashboard.php">MoSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
             </ul>
             <div class="my-2">
 
-                <a name="" id="" class="btn btn-danger" href="../signout/signout.php" role="button">
+                <a name="" id="" class="btn btn-danger" href="signout/signout.php" role="button">
                     <i class="fas fa-sign-out-alt text-white"></i> Sign out</a>
             </div>
         </div>

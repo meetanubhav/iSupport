@@ -2,7 +2,7 @@
     // session_start();
     // $petid=$_SESSION['petid'];
     $petid=$_GET['petition'];
-include 'database_driver/db.php';
+include 'db.php';
     $camp=mysqli_query($con,"select * from petition where petid = '$petid'");
     $campaign=mysqli_fetch_assoc($camp);  
 ?>
@@ -14,7 +14,7 @@ include 'database_driver/db.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <!--custom css -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- icon pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
@@ -30,7 +30,7 @@ include 'database_driver/db.php';
 
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="../index.php">MoSupport</a>
+        <a class="navbar-brand" href="index.php">MoSupport</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@ include 'database_driver/db.php';
                                 </ol> -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block h-80 w-100" id="campimage" src="../<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
+                                        <img class="d-block h-80 w-100" id="campimage" src="<?php echo $campaign['pic']; ?>" alt="<?php echo $campaign['title']; ?>">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block h-500" src="..." alt="Second slide">
@@ -106,7 +106,7 @@ include 'database_driver/db.php';
                         </button> -->
                         <script>
                             function myFunction() {
-                            location.replace("www/campshow.php")
+                            location.replace("campshow.php")
                           
                             }
                             </script>
