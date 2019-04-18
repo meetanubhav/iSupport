@@ -1,11 +1,13 @@
 <?php
+    // // $youthid=$_GET['youthid'];
     session_start();
     $youthid=$_SESSION['youthid']; 
      if ($youthid > 0) {
     include 'db.php';
-    $_SESSION['youthid'] =$youthid;
+    
     $user=mysqli_query($con,"select * from youthlog where youthid='$youthid'");
     $userdetails=mysqli_fetch_assoc($user);
+    $_SESSION['youthid'] =$youthid;
    
     
 ?>
